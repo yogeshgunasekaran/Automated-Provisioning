@@ -1,6 +1,9 @@
 # Installing nginx in Ubuntu	
-apt update
-apt install nginx -y
+sudo apt update
+sudo apt upgrade
+sudo apt install nginx -y
+
+# Configuring Ngnix for Application Servers
 cat <<EOT>> backend
 upstream backend {
 
@@ -22,11 +25,16 @@ server {
 
 EOT
 
-mv backend /etc/nginx/sites-available/backend
-rm -rf /etc/nginx/sites-enabled/default
-ln -s /etc/nginx/sites-available/backend /etc/nginx/sites-enabled/backend
+# Move the backend Ngnix Configuration file to Ngnix sites-available directory
+sudo mv backend /etc/nginx/sites-available/backend
+
+# Remove default Nginx configuration file
+sudo rm -rf /etc/nginx/sites-enabled/default
+
+# Create a Symbolic soft-link in Ngnix sites-enabled for the backend config file in Ngnix sites-available
+sudo ln -s /etc/nginx/sites-available/backend /etc/nginx/sites-enabled/backend
 
 # Starting Nginx service
-systemctl start nginx
-systemctl enable nginx
-systemctl restart nginx
+sudo systemctl start nginx
+sudo systemctl enable nginx
+sudo systemctl restart nginx
