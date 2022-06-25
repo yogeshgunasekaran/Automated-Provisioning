@@ -1,7 +1,7 @@
 # Installing nginx in Ubuntu	
 apt update
 apt install nginx -y
-cat <<EOT > backend
+cat <<EOT>> backend
 upstream backend {
 
 	server app01:8080;
