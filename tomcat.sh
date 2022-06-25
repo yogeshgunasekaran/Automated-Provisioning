@@ -79,10 +79,38 @@ git clone -b <branch-name> <repository-link>
 cd <into-project-directory>
 
 ########################################################################################################################################
-# NOTE: Before Building the Artifact. Update the Configuration file in <project-directory>/src/main/resources/applications.properties  
+# NOTE: Before Building the Artifact. Update the Configuration file in <project-directory-here>/src/main/resources/applications.properties  
 # This Configuration file will be used by the application to connect to the various backend servers									                   	
 # Futher Do Build & Deploy																											                                                       
 ########################################################################################################################################
+cat <<EOT>> <project-directory-here>/src/main/resources/applications.properties
+#JDBC Configutation for Database Connection
+jdbc.driverClassName=com.mysql.jdbc.Driver
+jdbc.url=jdbc:mysql://<mysql-ip-here>:3306/accounts?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull
+jdbc.username=<mysql-user-name-here>
+jdbc.password=<mysql-user-password-here>
+
+#Memcached Configuration For Active and StandBy Host
+#For Active Host
+memcached.active.host=<memcached-ip-here>
+memcached.active.port=11211
+#For StandBy Host
+memcached.standBy.host=<memcached-standBy-ip-here>
+memcached.standBy.port=11211
+
+#RabbitMq Configuration
+rabbitmq.address=<rabbitmq-ip-here>
+rabbitmq.port=5672
+rabbitmq.username=<rabbitmq-user-name-here>
+rabbitmq.password=<rabbitmq-user-password-here>
+
+#Elasticsearch Configuration
+elasticsearch.host =<elasticsearch-ip-here>
+elasticsearch.port =9300
+elasticsearch.cluster=<cluster-here>
+elasticsearch.node=<node-here>
+
+EOT
 
 # Build Artifact using Maven
 mvn install
