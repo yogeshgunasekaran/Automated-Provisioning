@@ -4,7 +4,7 @@ apt install nginx -y
 cat <<EOT>> backend
 upstream backend {
 
-	server app01:8080;
+	server <tomcat-ip-here>:8080;
 
 }
 
