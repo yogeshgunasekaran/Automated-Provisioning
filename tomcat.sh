@@ -111,3 +111,6 @@ cp /vagrant/application.properties /usr/local/tomcat8/webapps/ROOT/WEB-INF/class
 
 # Restart tomcat server
 systemctl restart tomcat
+
+
+
