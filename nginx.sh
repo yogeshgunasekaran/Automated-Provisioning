@@ -26,7 +26,7 @@ mv backend /etc/nginx/sites-available/backend
 rm -rf /etc/nginx/sites-enabled/default
 ln -s /etc/nginx/sites-available/backend /etc/nginx/sites-enabled/backend
 
-#starting nginx service and firewall
+# Starting Nginx service
 systemctl start nginx
 systemctl enable nginx
 systemctl restart nginx
