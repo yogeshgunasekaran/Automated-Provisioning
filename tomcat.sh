@@ -83,7 +83,7 @@ cd <into-project-directory>
 # This Configuration file will be used by the application to connect to the various backend servers									                   	
 # Futher Do Build & Deploy																											                                                       
 ########################################################################################################################################
-cat <<EOT>> <project-directory-here>/src/main/resources/applications.properties
+cat <<EOT>> src/main/resources/applications.properties
 #JDBC Configutation for Database Connection
 jdbc.driverClassName=com.mysql.jdbc.Driver
 jdbc.url=jdbc:mysql://<mysql-ip-here>:3306/accounts?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull
