@@ -28,7 +28,7 @@ EOT
 # Move the backend Ngnix Configuration file to Ngnix sites-available directory
 sudo mv backend /etc/nginx/sites-available/backend
 
-# Remove default Nginx configuration file
+# Remove default Nginx configuration file in Ngnix sites-enabled 
 sudo rm -rf /etc/nginx/sites-enabled/default
 
 # Create a Symbolic soft-link in Ngnix sites-enabled for the backend config file in Ngnix sites-available
