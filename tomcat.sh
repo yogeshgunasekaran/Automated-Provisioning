@@ -79,9 +79,9 @@ git clone -b <branch-name> <repository-link>
 cd <into-project-directory>
 
 ########################################################################################################################################
-# NOTE: Before Building the Artifact. Update the Configuration file in <project-directory>/src/main/resources/applications.properties  #
-# This Configuration file will be used by the application to connect to the various backend servers									                   #	
-# Futher Do Build & Deploy																											                                                       #
+# NOTE: Before Building the Artifact. Update the Configuration file in <project-directory>/src/main/resources/applications.properties  
+# This Configuration file will be used by the application to connect to the various backend servers									                   	
+# Futher Do Build & Deploy																											                                                       
 ########################################################################################################################################
 
 # Build Artifact using Maven
