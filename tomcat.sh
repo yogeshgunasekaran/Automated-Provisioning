@@ -24,7 +24,7 @@ TOMDIR=`echo $EXTOUT | cut -d '/' -f1`
 # Creating a user tomcat with nologin acccess
 useradd --shell /sbin/nologin tomcat
 
-# Copy the extracted (top-level)directory to /usr/local/tomcat8 path
+# Sync the extracted (top-level)directory to /usr/local/tomcat8 path
 # a-copy files recursively and preserve ownership of files when files are copied which is root in this case
 # v-verbose
 # z-gzip files
